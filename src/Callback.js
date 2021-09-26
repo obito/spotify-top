@@ -144,7 +144,7 @@ async function getToken(code) {
       "Content-Type": "application/x-www-form-urlencoded",
     },
 
-    body: `grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:3000/callback`,
+    body: `grant_type=authorization_code&code=${code}&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}`,
   });
 
   if (tokenRequest.status !== 200)
