@@ -44,23 +44,21 @@ class Callback extends React.Component {
       u_trackShortTop: trackShortTop,
       u_trackLongTop: trackLongTop,
     });
-
-    console.log(this.state.u_artistMediumTop);
   }
 
-  getInfo() {
-    console.log(this.code);
-  }
 
   mapTop(array) {
-    return array.map((artist, index) => (
+    return array.map((item, index) => (
       <li>
-        {index+1} - {artist.name}
+        {index+1} - <b>{item.name}</b> {item.artists ? `by ${item.artists[0].name}` : ""}
       </li>
     ));
   }
 
   render() {
+
+
+
     const artistMediumTop = this.mapTop(this.state.u_artistMediumTop)
     const artistShortTop = this.mapTop(this.state.u_artistShortTop)
     const artistLongTop = this.mapTop(this.state.u_artistLongTop)
@@ -68,6 +66,7 @@ class Callback extends React.Component {
     const trackMediumTop = this.mapTop(this.state.u_trackMediumTop)
     const trackShortTop = this.mapTop(this.state.u_trackShortTop)
     const trackLongTop = this.mapTop(this.state.u_trackLongTop)
+
 
     return (
       <div>
