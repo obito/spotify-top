@@ -1,8 +1,5 @@
 import React from "react";
-import qs from "qs";
 import Tabs from "./components/Tabs";
-
-const tokenURL = "https://accounts.spotify.com/api/token";
 
 class Callback extends React.Component {
   constructor(props) {
@@ -113,7 +110,7 @@ async function getTop(token, type, timeRange) {
     }
   );
 
-  if (topRequest.status != 200)
+  if (topRequest.status !== 200)
     throw new Error("unexcepted error happened: ", topRequest);
 
   const bodyJson = await topRequest.json();
@@ -128,7 +125,7 @@ async function getUser(token) {
     },
   });
 
-  if (userRequest.status != 200)
+  if (userRequest.status !== 200)
     throw new Error("unexcepted error happened: ", userRequest);
 
   const bodyJson = await userRequest.json();
@@ -150,7 +147,7 @@ async function getToken(code) {
     body: `grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:3000/callback`,
   });
 
-  if (tokenRequest.status != 200)
+  if (tokenRequest.status !== 200)
     throw new Error("unexcepted error happened: ", tokenRequest);
 
   const bodyJson = await tokenRequest.json();
