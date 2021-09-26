@@ -55,7 +55,7 @@ class Callback extends React.Component {
   mapTop(array) {
     return array.map((artist, index) => (
       <li>
-        {index} - {artist.name}
+        {index+1} - {artist.name}
       </li>
     ));
   }
@@ -74,23 +74,23 @@ class Callback extends React.Component {
         <p>Username: {this.state.u_name}</p>
 
         <Tabs>
-          <div label="Artists Short Top">
+          <div label="Artists Short Term Top">
             <ul>{artistShortTop}</ul>
           </div>
-          <div label="Artists Medium Top">
+          <div label="Artists Medium Term Top">
             <ul>{artistMediumTop}</ul>
           </div>
-          <div label="Artists Long Top">
+          <div label="Artists Long Term Top">
             <ul>{artistLongTop}</ul>
           </div>
 
-          <div label="Tracks Short Top">
+          <div label="Tracks Short Term Top">
             <ul>{trackShortTop}</ul>
           </div>
-          <div label="Tracks Medium Top">
+          <div label="Tracks Medium Term Top">
             <ul>{trackMediumTop}</ul>
           </div>
-          <div label="Tracks Long Top">
+          <div label="Tracks Long Term Top">
             <ul>{trackLongTop}</ul>
           </div>
         </Tabs>
